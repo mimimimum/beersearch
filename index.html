@@ -6,6 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src='build/main.bundle.js'></script>
@@ -14,22 +15,30 @@
 		.test{
 			width: 300px
 		}
+		body {
+			background-image: url("beer.png");
+			background-size: 100% 100%;
+			background-repeat: on-repeat;
+			background-attachment: fixed;
+		}
+
 		</style>
 </head>
 <body>
 <center>
-	<h1>HW3 - BEER Searching <span class="glyphicon glyphicon-glass"></span></h1>
+	<h1><i class="fa fa-beer" aria-hidden="true"></i> BEER SEARCHING <i class="fa fa-search" aria-hidden="true"></i>
+</h1>
 	<br>
+	<h4>Search by name</h4><input id="find" type="text" class="test" placeholder="Enter name"><br><br>
+	<h4>Search by yeast</h4><input id="find2" type="text" class="test" placeholder="Enter yeast"><br><br>
+	<button type="button" class="btn btn-warning" onclick="findBeer((document.getElementById('find').value),(document.getElementById('find2').value))">SEARCH</button>
 	<br>
-	<input id="find" type="text"  class="test">
-	<input id="find2" type="text"  class="test" ><button type="button" class="btn btn-info" onclick="findBeer((document.getElementById('find').value),(document.getElementById('find2').value))">Search</button>
-	<br>result :<div id="num"></div>
-	<div>
-		<table id="beers" border="1">
-	</table>
+	RESULT : <div id="num"></div>
+	<br>
+		<div id="beers">
+		</div>
 	</center>
-
-
+	
 </body>
 
 
